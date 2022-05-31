@@ -20,26 +20,16 @@ private:
     //ProductCollection soldoutCollection;
 
 public:
-    void createID(string userDB, string name, string residentRegistrationNumber, string ID, string pw)
-    {
+    string getName() {};
+    double getRegNo() {};
+    string getID() {};
+    string getPassword() {};
 
-    }
-    void checkLogin(string ID, string pw)
-    {
-    }
+    void createID(string userDB, string name, string residentRegistrationNumber, string ID, string pw) {};
+    void checkLogin(string ID, string pw) {};
+    void withdrawalUser(string id) {};
 
-    void withdrawalUser(string id)
-    {
-
-    }
-
-    ProductCollection getmySalesCollection()
-    {
-
-    }
-
-    //ProductCollection getSoldoutCollection()
-    //{
-
-    //}
+    ProductCollection getAllSalesCollection() {};
+    ProductCollection getOnSalesCollection() {};
+    ProductCollection getSoldoutCollection() {};
 };

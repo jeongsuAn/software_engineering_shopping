@@ -1,41 +1,35 @@
 /*
-* File name : ProductCollection.h
-* File created by B711169 정다은
+* Class : ProductCollection
+* Description:  ProductCollection control class
+* Created: 2022/5/31
+* Author: B711169 정다은
+* mail: jul12230103@gmail.com
 */
 
 #include <string>
 #include <vector>
+#include "Product.h"
+
 using namespace std;
 
-class ProductCollection {       // The class
+class ProductCollection { 
 
 private:
 	vector<Product> v;
+
 public:
-	Product findFirst()
-	{
-		return v.front();
-	}
-	vector<Product>::iterator findFirstIdx()
-	{
-		return v.begin();
-	}
+	//Product findFirst();
+	//vector<Product>::iterator findFirstIdx() {};
+	////Product getNext(vector<Product>::iterator it) {};
+	
+	vector<Product>::iterator findFirstIdx();
+	vector<Product>::iterator getNext(vector<Product>::iterator it);
+	vector<Product>::iterator findLastIdx();
 
-	//Product getNext(vector<Product>::iterator it)
-	//{
-	//	next(it, 1);
-	//	return *it;
+	vector<Product> getList() {};
 
-	//}
-
-	vector<Product> getList()
-	{
-		return v;
-	}
-
-	void addProduct(Product p) 
-	{
-		v.push_back(p);
-	}
-
+	void addProduct(Product p) {};
+	//void traverseAll() {};
+	vector<Product> listOnsaleProducts() {};
+	vector<Product> listSoldoutProducts() {};
 };

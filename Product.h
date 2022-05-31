@@ -4,6 +4,7 @@
 */
 
 #include <string>
+#include <vector>
 using namespace std;
 
 class Product {       // The class
@@ -20,77 +21,27 @@ private:
     bool salesState;
 
 public:
-    typedef struct statisticsDTO {
+    typedef struct statisticsDTO
+    {
         string productName;
         int totalProfit;
         int avgSatisfaction;
     } sDTO;
+    Product() {};
 
-    Product(string pname, string manufacturer, int price, int quantity) // default constructor
-    {
-        this->productName = pname;
-        this->manufacturer = manufacturer;
-        this->price = price;
-        this->quantity = quantity;
-    }
+    Product(string sellerID, string pname, string manufacturer, int price, int quantity) {};
 
-    string getSellerID()
-    {
-        return sellerID;
-    }
-    string getproductName()
-    {
-        return productName;
-    }
-    string getmanufacturer()
-    {
-        return manufacturer;
-    }
-    int getprice()
-    {
-        return price;
-    }
-    int getquantity()
-    {
-        return quantity;
-    }
-
-    bool getSalesState()
-    {
-        // 판매중: true, 품절: false
-        return salesState;
-    }
-
+    string getSellerID(){};
+    string getProductName(){};
+    string getManufacturer(){};
+    int getPrice(){};
+    int getQuantity(){};
+    int getSoldQuantity() {};
+    bool getSalesState(){};
     //Product getProductByName(string productName)
     //{
-
     //}
-
-    void savePurchaseSatisfaction(int score)
-    {
-        scores.push_back(score); 
-    }
-
-    void getItemDetails()
-    {
-    
-    }
-
-    statisticsDTO getInfoForStatistics()
-    {
-        sDTO s;
-        s.productName = this->getproductName();
-
-        s.totalProfit = soldQuantity * price;
-
-        int avgSatisfaction = 0;
-        for (vector<int>::iterator iter = scores.begin(); iter != scores.end(); iter++) {
-            avgSatisfaction += *iter;
-        }
-        avgSatisfaction /= soldQuantity;
-
-        s.avgSatisfaction = avgSatisfaction;
-
-        return s;
-    }
+    void savePurchaseSatisfaction(int score){};
+    void getItemDetails(){};
+    statisticsDTO getInfoForStatistics(){};
 };

@@ -88,7 +88,7 @@ void doTask()
             switch (menu_level_2)
             {
             case 1:   // "1.1. 회원가입“ 메뉴 부분
-            {  enrollProduct();  break; }
+            {  addProduct();  break; }
             case 2:
             {  showMySellingProducts();  break;  }
             case 3:
@@ -130,10 +130,11 @@ void doTask()
     }
 }
 
+    
 // 1.1 회원가입
 void join()
 {
-    char user_type[MAX_STRING], name[MAX_STRING], SSN [MAX_STRING],
+    char user_type[MAX_STRING], name[MAX_STRING], SSN[MAX_STRING],
         address[MAX_STRING], ID[MAX_STRING], password[MAX_STRING];
 
     // 입력 형식 : 이름, 주민번호, ID, Password를 파일로부터 읽음
@@ -171,19 +172,19 @@ void logout() {
 * 3.1 판매 의류 등록
 * Author : B711169 정다은
 */
-void enrollProduct()
+void addProduct()
 {
-    char product_name[MAX_STRING], manufacturer[MAX_STRING];
-    int price, quantity;
-    // 입력 형식 : 이름, 주민번호, ID, Password를 파일로부터 읽음
-    fscanf(in_fp, "%s %s %d %d", product_name, manufacturer, price, quantity);
+    //char product_name[MAX_STRING], manufacturer[MAX_STRING];
+    //int price, quantity;
+    //// 입력 형식 : 이름, 주민번호, ID, Password를 파일로부터 읽음
+    //fscanf(in_fp, "%s %s %d %d", product_name, manufacturer, price, quantity);
 
     User user;
 
     string pName = product_name;
     string manufacturer = manufacturer;
     Product p(pName, manufacturer, price, quantity);
- 
+
     user.getmySalesCollection().addProduct(p);
 
     // 출력 형식
@@ -283,7 +284,7 @@ void salesStatistics()
 
     // 출력 형식
     fprintf(out_fp, "5.1 판매 상품 통계\n");
-    
+
     for (iter = v.begin(); iter != v.end(); iter++) {
         string productName = (*iter).getInfoForStatistics().productName;
         int totalProfit = (*iter).getInfoForStatistics().totalProfit;
