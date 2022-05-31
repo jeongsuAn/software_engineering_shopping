@@ -1,19 +1,45 @@
-#pragma once
-#include <string>
+/*
+* File name : User.h
+* File created by B711169 정다은
+*/
 
-class User {
+#include <string>
+#include "Product.h"
+#include "ProductCollection.h"
+using namespace std;
+
+class User {       // The class
+
 private:
-	std::string name;
-	std::string residentRegistrationNumber; //주민번호
-	std::string id;
-	std::string pw;
-	User* nextUserPtr;
-	User* previousUserPtr;
+    string name;
+    double residentRegistrationNumber; // Access specifier
+    string ID;
+    string password;
+
+    ProductCollection mySalesCollection;
+    //ProductCollection soldoutCollection;
+
 public:
-	User(std::string name, std::string residentRegistrationNumber, std::string id, std::string pw);
-	void createUser(std::string name, std::string residentRegistrationNumber, std::string id, std::string pw);
-	User* getNextUserPtr();
-	void deleteUser(User* userPtr);
-	int checkId(std::string id);
-	int checkPw(std::string pw);
+    void createID(string userDB, string name, string residentRegistrationNumber, string ID, string pw)
+    {
+
+    }
+    void checkLogin(string ID, string pw)
+    {
+    }
+
+    void withdrawalUser(string id)
+    {
+
+    }
+
+    ProductCollection getmySalesCollection()
+    {
+
+    }
+
+    //ProductCollection getSoldoutCollection()
+    //{
+
+    //}
 };
