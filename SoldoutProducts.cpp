@@ -8,7 +8,14 @@
 #include "SoldoutProducts.h"
 #include "SoldoutProductsUI.h"
 
-void SoldoutProducts::showSoldoutProducts(FILE* o_fp, User u)
+SoldoutProducts::SoldoutProducts()
 {
-    SoldoutProductsUI UI(o_fp, u, u.getOnSalesCollection());
+
+}
+
+void SoldoutProducts::showSoldoutProducts(User* u, FILE* o_fp)
+{
+    // Output UI    
+    SoldoutProductsUI* UI = new SoldoutProductsUI();
+    UI->enableUI(u, o_fp, u->getSoldoutCollection());
 }

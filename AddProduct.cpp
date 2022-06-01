@@ -14,7 +14,6 @@ AddProduct::AddProduct()
 {
 }
 
-
 void AddProduct::addProduct(User* u, FILE* in_fp, FILE* out_fp)
 {
     // Input UI    
@@ -23,7 +22,7 @@ void AddProduct::addProduct(User* u, FILE* in_fp, FILE* out_fp)
 
     // Control
     Product p(u->getName(), addProductUI->getProductName(), addProductUI->getManufacturer(), addProductUI->getPrice(), addProductUI->getQuantity());
-    u->getAllSalesCollection().push_back(p);
+    (u->getAllSalesCollection()).push_back(p);
 
     // Output UI
     addProductUI->AddProductUI_OUT(out_fp, p);

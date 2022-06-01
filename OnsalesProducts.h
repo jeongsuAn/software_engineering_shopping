@@ -8,10 +8,10 @@
 */
 #include <iostream>
 #include "User.h"
-//#include "Product.h"
 
 class OnsalesProducts
 {
 public:
-    void showOnsalesProducts(FILE* o_fp, User u);
+    OnsalesProducts();
+    void showOnsalesProducts(User* u, FILE* i_fp, FILE* o_fp);
 };

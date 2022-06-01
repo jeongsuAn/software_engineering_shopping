@@ -16,7 +16,5 @@ class AddProduct
 {
 public:
     AddProduct();
-    // 3.1. 판매 의류 등록
-    // > [상품명][제작회사명][가격][수량]
     void addProduct(User* u, FILE* in_fp, FILE* out_fp);
 };

@@ -41,10 +41,23 @@ bool Product::getSalesState()
     return salesState;
 }
 
-//Product Product::getProductByName(string productName)
-//{
+int Product::getPurchaseSatisfaction()
+{
+    int score = 0;
+    for (int i = 0; i < scores.size(); i++)
+    {
+        score += scores[i];
+    }
+    score /= scores.size();
+    return score;
+}
 
-//}
+int Product::getTotalProfit()
+{
+    return stoi(soldQuantity) * stoi(price);
+}
+
+
 
 void Product::savePurchaseSatisfaction(int score)
 {

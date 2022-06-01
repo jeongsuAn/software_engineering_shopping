@@ -17,8 +17,9 @@ private:
     std::string quantity;
     std::string soldQuantity;
     std::vector<int> scores;
-    //int avgPurchaseSatisfaction;
+    int avgPurchaseSatisfaction;
     bool salesState;
+    
 
 public:
     //typedef struct statisticsDTO
@@ -39,6 +40,8 @@ public:
     std::string getQuantity();
     std::string getSoldQuantity();
     bool getSalesState();
+    int getPurchaseSatisfaction();
+    int getTotalProfit();
 
     //Product getProductByName(string productName)
     //{

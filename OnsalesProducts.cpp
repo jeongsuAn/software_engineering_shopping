@@ -8,7 +8,13 @@
 #include "OnsalesProducts.h"
 #include "OnsalesProductsUI.h"
 
-void OnsalesProducts::showOnsalesProducts(FILE* o_fp, User u)
+OnsalesProducts::OnsalesProducts()
 {
-    OnsalesProductsUI UI(o_fp, u, u.getOnSalesCollection());
+}
+
+void OnsalesProducts::showOnsalesProducts(User* u, FILE* i_fp, FILE* o_fp)
+{
+    // Output UI    
+    OnsalesProductsUI* UI = new OnsalesProductsUI();
+    UI->enableUI(u, o_fp, u->getAllSalesCollection());
 }

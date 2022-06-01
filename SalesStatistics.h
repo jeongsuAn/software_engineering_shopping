@@ -1,5 +1,4 @@
 #pragma once
-
 /*
 * Class : SalesStatistics
 * Description:  SalesStatistics control class
@@ -14,5 +13,6 @@
 class SalesStatistics
 {
 public:
-    void showStatistics(FILE* o_fp, User u);
+    SalesStatistics();
+    void showStatistics(FILE* o_fp, User* u);
 };

@@ -13,5 +13,6 @@
 class SoldoutProducts
 {
 public:
-    void showSoldoutProducts(FILE* o_fp, User u);
+    SoldoutProducts();
+    void showSoldoutProducts(User* u, FILE* o_fp);
 };

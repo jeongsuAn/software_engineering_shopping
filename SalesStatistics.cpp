@@ -9,9 +9,12 @@
 #include "User.h"
 #include "SalesStatistics.h"
 #include "SalesStatisticsUI.h"
-void SalesStatistics::showStatistics(FILE* o_fp, User u)
+SalesStatistics::SalesStatistics()
 {
-//	ProductCollection allList = ;
-//	// ÀÛ¼ºÁß
-//	SalesStatisticsUI UI(FILE * o_fp, User u, ProductCollection list)
+
+}
+void SalesStatistics::showStatistics(FILE* o_fp, User* u)
+{
+	SalesStatisticsUI* UI = new SalesStatisticsUI();
+	UI->enableUI(u, o_fp, u->getAllSalesCollection());
 }

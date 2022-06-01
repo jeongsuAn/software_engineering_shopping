@@ -6,26 +6,53 @@
 * mail: jul12230103@gmail.com
 */
 #include "SalesStatisticsUI.h"
+#include <string>
+#include <iostream>
 
-SalesStatisticsUI::SalesStatisticsUI(FILE* o_fp, User u, std::vector<Product> list)
+SalesStatisticsUI::SalesStatisticsUI() {}
+
+void SalesStatisticsUI::setProductName(std::string str)
 {
-    enableEx(o_fp);
+    productName = str;
+}
+void SalesStatisticsUI::setTotalProfit(std::string str)
+{
+    totalProfit = str;
+}
+void SalesStatisticsUI::setAvgSatisfactionScore(std::string str)
+{
+    avgSatistactionScore = str;
+}
 
-    std::vector<Product>::iterator it = list.begin();
-    enable(o_fp, *(it));
-    while (it != list.end()) {
-        enable(o_fp, *(it));  ++it;
+std::string SalesStatisticsUI::getProductName()
+{
+    return productName;
+}
+std::string SalesStatisticsUI::getTotalProfit()
+{
+    return totalProfit;
+}
+std::string SalesStatisticsUI::getAvgSatisfactionScore()
+{
+    return avgSatistactionScore;
+}
+
+void SalesStatisticsUI::enableUI(User* u, FILE* o_fp, std::vector<Product>& list)
+{
+    fprintf(o_fp, "5.1. 판매 상품 통계\n");
+
+    int idx = 0;
+    while (idx++ < list.size())
+    {
+        this->setProductName(list[idx].getProductName());
+        this->setTotalProfit(std::to_string(list[idx].getTotalProfit()));
+        this->setAvgSatisfactionScore(std::to_string(list[idx].getPurchaseSatisfaction()));
+        enable(o_fp);
     }
 }
 
-void SalesStatisticsUI::enableEx(FILE* out_fp)
+void SalesStatisticsUI::enable(FILE* out_fp)
 {
     // 출력 형식
-    fprintf(out_fp, "5.1. 판매 상품 통계\n");
-}
-
-void SalesStatisticsUI::enable(FILE* out_fp, Product p)
-{
-    // 출력 형식
-    fprintf(out_fp, "%s %d %d\n", this->productName, this->totalProfit, this->avgSatisfaction);
+    fprintf(out_fp, "%s %s %s\n", this->getProductName(), this->getTotalProfit(), this->getAvgSatisfactionScore());
 }

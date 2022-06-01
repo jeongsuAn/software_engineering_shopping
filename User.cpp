@@ -50,12 +50,12 @@ std::string User::getName() {
 }
 
 
-std::vector<Product> User::getAllSalesCollection() {
+std::vector<Product>& User::getAllSalesCollection() {
 	return mySalesCollection;
 }
 
 
-std::vector<Product> User::getOnSalesCollection() {
+std::vector<Product>& User::getOnSalesCollection() {
 
 	std::vector<Product> onsalesList;
 
@@ -80,7 +80,7 @@ std::vector<Product> User::getOnSalesCollection() {
 }
 
 
-std::vector<Product> User::getSoldoutCollection() {
+std::vector<Product>& User::getSoldoutCollection() {
 	
 	std::vector<Product> soldoutList;
 	

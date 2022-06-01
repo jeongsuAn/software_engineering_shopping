@@ -30,9 +30,8 @@ public:
 	PurchaseHistoryCollection getMyPurchaseHistoryCollection();
 
 	
-	std::vector<Product> getAllSalesCollection();
-	std::vector<Product> getOnSalesCollection();
-	std::vector<Product> getSoldoutCollection();
-
+	std::vector<Product>& getAllSalesCollection();
+	std::vector<Product>& getOnSalesCollection();
+	std::vector<Product>& getSoldoutCollection();
 
 };
