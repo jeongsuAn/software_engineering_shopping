@@ -4,8 +4,15 @@
 * File created by B711169 ??????
 */
 
+// Revision
+ //   1. When & Who : 2022/06/01 01:00 am by B711089
+ //      What : include cmath, 
+ //             add function avgSatisfaction
+
+
 #include <string>
 #include <vector>
+#include <cmath>
 
 class Product {       // The class
 
@@ -16,12 +23,11 @@ private:
     std::string price;
     std::string quantity;
     std::string soldQuantity;
-    std::vector<int> scores;
-    int avgPurchaseSatisfaction;
     bool salesState;
-    
 
 public:
+    std::vector<int> scores;
+
     //typedef struct statisticsDTO
     //{
     //    string productName;
@@ -39,9 +45,13 @@ public:
     std::string getPrice();
     std::string getQuantity();
     std::string getSoldQuantity();
+
+    void setQuantity();
+
     bool getSalesState();
     int getPurchaseSatisfaction();
     int getTotalProfit();
+    std::vector<int>& getScores();
 
     //Product getProductByName(string productName)
     //{
@@ -49,5 +59,6 @@ public:
 
     void savePurchaseSatisfaction(int score);
     void getItemDetails();
-    struct statisticsDTO getInfoForStatistics();
+    // struct statisticsDTO getInfoForStatistics();
+    int avgSatisfaction();
 };

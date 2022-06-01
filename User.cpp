@@ -96,3 +96,41 @@ std::vector<Product>& User::getSoldoutCollection() {
 	}
 	return soldoutList;
 }
+
+std::vector<Product>& User::getMyPurchaseHistoryCollection()
+{
+	return this->myPurchaseHistoryCollection;
+}
+
+
+Product& User::getPurchaseHistory(std::string pName)
+{
+	for (auto it = this->myPurchaseHistoryCollection.begin(); it != myPurchaseHistoryCollection.end(); it++)
+	{
+		if ((*it).getProductName() == pName)
+		{
+			return *it;
+		}
+	}
+}
+
+Product& User::getOneSalesProduct(std::string pName)
+{
+	std::vector<Product>::iterator it = this->mySalesCollection.begin();
+
+	for (; it != this->mySalesCollection.end(); it++)
+	{
+		if ((*it).getProductName() == pName)
+		{
+			return (*it);
+		}
+	}
+}
+
+
+void User::addPurchaseHistory(Product& p)
+{
+	myPurchaseHistoryCollection.push_back(p);
+}
+
+

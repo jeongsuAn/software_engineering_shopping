@@ -12,6 +12,9 @@
 #include "SoldoutProducts.h"
 #include "SalesStatistics.h"
 #include "Product.h"
+#include "ProductPayment.h"
+#include "CheckPurchaseHistory.h"
+#include "Satisfaction.h"
 
 // 상수 선언
 #define MAX_STRING 32
@@ -133,20 +136,24 @@ void doTask(FILE* in_fp, FILE* out_fp)
 
             switch (menu_level_2)
             {
-            case 1:   // "1.1. 회원가입“ 메뉴 부분
+            case 1:   
             {  //showProductDetails();  
                 break;
             }
             case 2:
-            {  //buy();  
+            {  
+                std::string pName = "hat";  // for test
+                ProductPayment* productPayment = new ProductPayment(out_fp, user, pName);
                 break;
             }
             case 3:
-            {  //showPurchaseList();  
+            {  
+                CheckPurchaseHistory* checkPurchaseHistory = new CheckPurchaseHistory(user, out_fp);
                 break;
             }
             case 4:
-            {  //saveAvgSatisfaction();  
+            {  
+                Satisfaction* satisfaction = new Satisfaction(user, in_fp, out_fp);
                 break;
             }
             }

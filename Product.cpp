@@ -57,17 +57,35 @@ int Product::getTotalProfit()
     return stoi(soldQuantity) * stoi(price);
 }
 
+std::vector<int>& Product::getScores()
+{
+    return scores;
+}
+
 
 
 void Product::savePurchaseSatisfaction(int score)
 {
-    scores.push_back(score);
+    this->getScores().push_back(score);
 }
 
 void Product::getItemDetails()
 {
 
 }
+
+int Product::avgSatisfaction() {
+    int sum = 0;
+    for (auto it = scores.begin(); it != scores.end(); it++)
+    {
+        sum += *it;
+    }
+    if (scores.size() == 0) {
+        return 0;
+    }
+    return (int)(sum / scores.size());
+}
+
 
 //statisticsDTO Product::getInfoForStatistics()
 //{
@@ -86,3 +104,9 @@ void Product::getItemDetails()
 //
 //    return s;
 //}
+
+void Product::setQuantity()
+{
+    this->quantity = std::to_string(std::stoi(this->quantity) - 1);
+    this->soldQuantity = std::to_string(std::stoi(this->soldQuantity) + 1);
+}

@@ -14,10 +14,11 @@ private:
 	User* previousUserPtr;
 	//신규
 
-	PurchaseHistoryCollection* myPurchaseHistoryCollection;
+	// PurchaseHistoryCollection* myPurchaseHistoryCollection;
 public:
 
 	std::vector<Product> mySalesCollection;
+	std::vector<Product> myPurchaseHistoryCollection;
 
 	User(std::string name, std::string residentRegistrationNumber, std::string id, std::string pw);
 	void createUser(std::string name, std::string residentRegistrationNumber, std::string id, std::string pw);
@@ -27,11 +28,16 @@ public:
 	int checkPw(std::string pw);
 	//신규
 	std::string getName();
-	PurchaseHistoryCollection getMyPurchaseHistoryCollection();
+	// PurchaseHistoryCollection getMyPurchaseHistoryCollection();
 
 	
 	std::vector<Product>& getAllSalesCollection();
 	std::vector<Product>& getOnSalesCollection();
 	std::vector<Product>& getSoldoutCollection();
 
+	std::vector<Product>& getMyPurchaseHistoryCollection();
+
+	Product& getPurchaseHistory(std::string pName);
+	Product& getOneSalesProduct(std::string pName);
+	void addPurchaseHistory(Product& p);                                                  
 };
