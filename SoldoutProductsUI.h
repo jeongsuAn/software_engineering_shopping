@@ -1,3 +1,5 @@
+#pragma once
+
 /*
 * Class : SoldoutProductsUI
 * Description:  SoldoutProductsUI boundary class for UI
@@ -23,7 +25,7 @@ private:
     int avgSatisfaction;
 
 public:
-    SoldoutProductsUI(FILE* o_fp, User u, ProductCollection list);
+    SoldoutProductsUI(FILE* o_fp, User u, std::vector<Product> list);
     void enableEx(FILE* o_fp);
     void enable(FILE* o_fp, Product p);
 };

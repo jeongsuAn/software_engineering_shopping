@@ -1,3 +1,4 @@
+#pragma once
 /*
 * Class : SalesStatisticsUI
 * Description:  SalesStatisticsUI boundary class for UI
@@ -10,7 +11,6 @@
 #include <string>
 #include "User.h"
 #include "Product.h"
-#include "ProductCollection.h"
 #include "SalesStatistics.h"
 
 using namespace std;
@@ -23,7 +23,7 @@ private:
     int avgSatisfaction;
 
 public:
-    SalesStatisticsUI(FILE* o_fp, User u, ProductCollection list);
+    SalesStatisticsUI(FILE* o_fp, User u, std::vector<Product> list);
     void enableEx(FILE* o_fp);
     void enable(FILE* o_fp, Product p);
 };

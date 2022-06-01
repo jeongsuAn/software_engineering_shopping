@@ -5,14 +5,27 @@
 * Author: B711169 Á¤´ÙÀº
 * mail: jul12230103@gmail.com
 */
+
+#include "Product.h"
 #include "AddProduct.h"
 #include "AddProductUI.h"
-#include "ProductCollection.h"
-using namespace std;
 
-AddProduct::AddProduct(User u, string pName, string manufacturer, int price, int quantity, FILE* out_fp)
+AddProduct::AddProduct()
 {
-    Product p = Product(u.getName(), pName, manufacturer, price, quantity);
-    u.getAllSalesCollection().addProduct(p);
-    AddProductUI addProductUI(out_fp, p);
-}  
+}
+
+
+void AddProduct::addProduct(User* u, FILE* in_fp, FILE* out_fp)
+{
+    // Input UI    
+    AddProductUI* addProductUI = new AddProductUI();
+    addProductUI->AddProductUI_IN(in_fp);
+
+    // Control
+    Product p(u->getName(), addProductUI->getProductName(), addProductUI->getManufacturer(), addProductUI->getPrice(), addProductUI->getQuantity());
+    u->getAllSalesCollection().push_back(p);
+
+    // Output UI
+    addProductUI->AddProductUI_OUT(out_fp, p);
+    
+}

@@ -1,3 +1,5 @@
+#pragma once
+
 /*
 * Class : AddProductUI
 * Description:  AddProduct boundary class for UI
@@ -11,16 +13,25 @@
 #include "Product.h"
 #include "AddProduct.h"
 
-using namespace std;
-
 class AddProductUI
 {
 private:
-    string productName;
-    string manufacturer;
-    int price, quantity;
+    std::string productName, manufacturer, price, quantity;
 
 public:
-    AddProductUI(FILE* o_fp, Product p);
+    AddProductUI();
+
+    void setProductName(std::string s);
+    void setManufacturer(std::string s);
+    void setPrice(std::string s);
+    void setQuantity(std::string s);
+
+    std::string getProductName();
+    std::string getManufacturer();
+    std::string getPrice();
+    std::string getQuantity();
+
+    void AddProductUI_IN(FILE* i_fp);
+    void AddProductUI_OUT(FILE* o_fp, Product p);
     void enable(FILE* o_fp);
 };

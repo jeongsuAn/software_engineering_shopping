@@ -6,43 +6,45 @@
 
 #include <string>
 #include <vector>
-using namespace std;
 
 class Product {       // The class
 
 private:
-    string sellerID;
-    string productName;
-    string manufacturer;
-    int price;
-    int quantity;
-    int soldQuantity;
-    vector<int> scores;
+    std::string sellerID;
+    std::string productName;
+    std::string manufacturer;
+    std::string price;
+    std::string quantity;
+    std::string soldQuantity;
+    std::vector<int> scores;
     //int avgPurchaseSatisfaction;
     bool salesState;
 
 public:
-    typedef struct statisticsDTO
-    {
-        string productName;
-        int totalProfit;
-        int avgSatisfaction;
-    } sDTO;
-    Product() {};
+    //typedef struct statisticsDTO
+    //{
+    //    string productName;
+    //    int totalProfit;
+    //    int avgSatisfaction;
+    //} sDTO;
 
-    Product(string sellerID, string pname, string manufacturer, int price, int quantity) {};
+    Product();
 
-    string getSellerID() {};
-    string getProductName() {};
-    string getManufacturer() {};
-    int getPrice() {};
-    int getQuantity() {};
-    int getSoldQuantity() {};
-    bool getSalesState() {};
+    Product(std::string sellerID, std::string pname, std::string manufacturer, std::string price, std::string quantity);
+
+    std::string getSellerID();
+    std::string getProductName();
+    std::string getManufacturer();
+    std::string getPrice();
+    std::string getQuantity();
+    std::string getSoldQuantity();
+    bool getSalesState();
+
     //Product getProductByName(string productName)
     //{
     //}
-    void savePurchaseSatisfaction(int score) {};
-    void getItemDetails() {};
-    struct statisticsDTO getInfoForStatistics() ;
+
+    void savePurchaseSatisfaction(int score);
+    void getItemDetails();
+    struct statisticsDTO getInfoForStatistics();
 };

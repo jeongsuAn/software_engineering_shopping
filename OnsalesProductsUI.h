@@ -1,3 +1,5 @@
+#pragma once
+
 /*
 * Class : OnsalesProductUI
 * Description:  OnsalesProduct boundary class for UI
@@ -11,17 +13,15 @@
 #include "Product.h"
 #include "OnsalesProducts.h"
 
-using namespace std;
-
 class OnsalesProductsUI
 {
 private:
-    string productName;
-    string manufacturer;
+    std::string productName;
+    std::string manufacturer;
     int price, quantity;
 
 public:
-    OnsalesProductsUI(FILE* o_fp, User u, ProductCollection list);
+    OnsalesProductsUI(FILE* o_fp, User u, std::vector<Product> list);
     void enableEx(FILE* o_fp);
     void enable(FILE* o_fp, Product p);
 };

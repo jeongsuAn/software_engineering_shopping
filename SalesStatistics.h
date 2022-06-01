@@ -1,3 +1,5 @@
+#pragma once
+
 /*
 * Class : SalesStatistics
 * Description:  SalesStatistics control class
@@ -9,9 +11,6 @@
 #include <iostream>
 #include "User.h"
 #include "Product.h"
-#include "ProductCollection.h"
-using namespace std;
-
 class SalesStatistics
 {
 public:

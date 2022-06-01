@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <vector>
+class Product;
 class ProductCollection;
 class PurchaseHistoryCollection;
 class User {
@@ -11,9 +13,12 @@ private:
 	User* nextUserPtr;
 	User* previousUserPtr;
 	//신규
-	ProductCollection* mySalesCollection;
+
 	PurchaseHistoryCollection* myPurchaseHistoryCollection;
 public:
+
+	std::vector<Product> mySalesCollection;
+
 	User(std::string name, std::string residentRegistrationNumber, std::string id, std::string pw);
 	void createUser(std::string name, std::string residentRegistrationNumber, std::string id, std::string pw);
 	User* getNextUserPtr();
@@ -23,9 +28,11 @@ public:
 	//신규
 	std::string getName();
 	PurchaseHistoryCollection getMyPurchaseHistoryCollection();
-	ProductCollection getAllSalesCollection();
-	ProductCollection getOnSalesCollection();
-	ProductCollection getSoldoutCollection();
+
+	
+	std::vector<Product> getAllSalesCollection();
+	std::vector<Product> getOnSalesCollection();
+	std::vector<Product> getSoldoutCollection();
 
 
 };

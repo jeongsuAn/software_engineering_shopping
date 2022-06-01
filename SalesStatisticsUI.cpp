@@ -6,16 +6,15 @@
 * mail: jul12230103@gmail.com
 */
 #include "SalesStatisticsUI.h"
-using namespace std;
 
-SalesStatisticsUI::SalesStatisticsUI(FILE* o_fp, User u, ProductCollection list)
+SalesStatisticsUI::SalesStatisticsUI(FILE* o_fp, User u, std::vector<Product> list)
 {
     enableEx(o_fp);
 
-    vector<Product>::iterator it = list.findFirstIdx();
+    std::vector<Product>::iterator it = list.begin();
     enable(o_fp, *(it));
-    while (list.getNext(it) != list.findLastIdx()) {
-        enable(o_fp, *(list.getNext(it)));  ++it;
+    while (it != list.end()) {
+        enable(o_fp, *(it));  ++it;
     }
 }
 

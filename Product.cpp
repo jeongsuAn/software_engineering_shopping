@@ -1,35 +1,36 @@
 #include "Product.h"
 
-Product::Product(string sellerID, string pname, string manufacturer, int price, int quantity) // default constructor
+Product::Product(std::string sellerID, std::string pname, std::string manufacturer, std::string price, std::string quantity) // default constructor
 {
     this->sellerID = sellerID;
     this->productName = pname;
     this->manufacturer = manufacturer;
     this->price = price;
     this->quantity = quantity;
+   
 }
 
-string Product::getSellerID()
+std::string Product::getSellerID()
 {
     return sellerID;
 }
-string Product::getProductName()
+std::string Product::getProductName()
 {
     return productName;
 }
-string Product::getManufacturer()
+std::string Product::getManufacturer()
 {
     return manufacturer;
 }
-int Product::getPrice()
+std::string Product::getPrice()
 {
     return price;
 }
-int Product::getQuantity()
+std::string Product::getQuantity()
 {
     return quantity;
 }
-int Product::getSoldQuantity()
+std::string Product::getSoldQuantity()
 {
     return soldQuantity;
 }
@@ -55,20 +56,20 @@ void Product::getItemDetails()
 
 }
 
-statisticsDTO Product::getInfoForStatistics()
-{
-    statisticsDTO s;
-    s.productName = this->getproductName();
-
-    s.totalProfit = soldQuantity * price;
-
-    int avgSatisfaction = 0;
-    for (vector<int>::iterator iter = scores.begin(); iter != scores.end(); iter++) {
-        avgSatisfaction += *iter;
-    }
-    avgSatisfaction /= soldQuantity;
-
-    s.avgSatisfaction = avgSatisfaction;
-
-    return s;
-}
+//statisticsDTO Product::getInfoForStatistics()
+//{
+//    statisticsDTO s;
+//    s.productName = this->getproductName();
+//
+//    s.totalProfit = soldQuantity * price;
+//
+//    int avgSatisfaction = 0;
+//    for (vector<int>::iterator iter = scores.begin(); iter != scores.end(); iter++) {
+//        avgSatisfaction += *iter;
+//    }
+//    avgSatisfaction /= soldQuantity;
+//
+//    s.avgSatisfaction = avgSatisfaction;
+//
+//    return s;
+//}

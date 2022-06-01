@@ -2,15 +2,5 @@
 > lee 123456 mbc pwd1
 2.1. 로그인
 > mbc pwd1 
-2.2. 로그아웃
-> mbc 
-1.1. 회원가입
-> park 987654 obs pwd2
-2.1. 로그인
-> obs pwd2 
-1.2. 회원탈퇴
-> obs 
-2.1. 로그인
-> obs pwd2 
-2.1. 로그인
-> mbc pwd1 
+3.1 판매 의류 등록
+hat chulsoo 2000 1

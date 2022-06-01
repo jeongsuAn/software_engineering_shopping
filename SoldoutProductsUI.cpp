@@ -8,14 +8,14 @@
 #include "SoldoutProductsUI.h"
 using namespace std;
 
-SoldoutProductsUI::SoldoutProductsUI(FILE* o_fp, User u, ProductCollection list)
+SoldoutProductsUI::SoldoutProductsUI(FILE* o_fp, User u, std::vector<Product> list)
 {
     enableEx(o_fp);
 
-    vector<Product>::iterator it = list.findFirstIdx();
+    vector<Product>::iterator it = list.begin();
     enable(o_fp, *(it));
-    while (list.getNext(it) != list.findLastIdx()) {
-        enable(o_fp, *(list.getNext(it)));  ++it;
+    while (it != list.end()) {
+        enable(o_fp, *(it));  ++it;
     }
 }
 

@@ -1,5 +1,5 @@
 #include "User.h"
-#include "ProductCollection.h"
+#include "Product.h"
 
 //원형 큐를 만듬
 User::User(std::string name, std::string residentRegistrationNumber, std::string id, std::string pw) {
@@ -50,12 +50,49 @@ std::string User::getName() {
 }
 
 
-ProductCollection User::getAllSalesCollection() {
-	return this->mySalesCollection->getList();
+std::vector<Product> User::getAllSalesCollection() {
+	return mySalesCollection;
 }
-ProductCollection User::getOnSalesCollection() {
-	return this->mySalesCollection->getList();
+
+
+std::vector<Product> User::getOnSalesCollection() {
+
+	std::vector<Product> onsalesList;
+
+	// 주석 부분 버려버리기
+	//auto it = mySalesCollection->findFirstIdx();
+	//// 판매 중인 것만 출력
+	//if ((mySalesCollection->getProductByIdx(it))->getSalesState() == true || mySalesCollection->getProduct(it)->getQuantity() != 0)
+	//{
+	//	selling.push_back(mySalesCollection->getProduct(it))
+	//	it = mySalesCollection->getNext(it);
+	//}
+	//for (auto iter = (*mySalesCollection).begin(); iter != (*mySalesCollection).end(); iter++)
+
+	for (auto iter = mySalesCollection.begin(); iter != mySalesCollection.end(); iter++) 
+	{
+		if ((*iter).getSalesState() == true || std::stoi((*iter).getQuantity()) != 0)
+		{
+			onsalesList.push_back(*iter);
+		}
+	}
+	return onsalesList;
 }
-ProductCollection User::getSoldoutCollection() {
-	return this->mySalesCollection.getList();
+
+
+std::vector<Product> User::getSoldoutCollection() {
+	
+	std::vector<Product> soldoutList;
+	
+	//for (auto iter = (*mySalesCollection).begin(); iter != (*mySalesCollection).end(); iter++)
+
+	for (auto iter = mySalesCollection.begin(); iter != mySalesCollection.end(); iter++)
+	{
+		// 품절인 것만 출력
+	    if (!(*iter).getSalesState())
+	    {
+	        soldoutList.push_back(*iter);
+	    }
+	}
+	return soldoutList;
 }

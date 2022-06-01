@@ -1,3 +1,4 @@
+#pragma once
 /*
 * Class : OnsalesProducts
 * Description:  OnsalesProducts control class
@@ -5,12 +6,9 @@
 * Author: B711169 ¡§¥Ÿ¿∫
 * mail: jul12230103@gmail.com
 */
-
 #include <iostream>
 #include "User.h"
-#include "Product.h"
-#include "ProductCollection.h"
-using namespace std;
+//#include "Product.h"
 
 class OnsalesProducts
 {
