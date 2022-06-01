@@ -1,35 +1,31 @@
-/*
-* File name : User.h
-* File created by B711169 정다은
-*/
-
+#pragma once
 #include <string>
-#include "Product.h"
-#include "ProductCollection.h"
-using namespace std;
-
-class User {       // The class
-
+class ProductCollection;
+class PurchaseHistoryCollection;
+class User {
 private:
-    string name;
-    double residentRegistrationNumber; // Access specifier
-    string ID;
-    string password;
-
-    ProductCollection mySalesCollection;
-    //ProductCollection soldoutCollection;
-
+	std::string name;
+	std::string residentRegistrationNumber; //주민번호
+	std::string id;
+	std::string pw;
+	User* nextUserPtr;
+	User* previousUserPtr;
+	//신규
+	ProductCollection* mySalesCollection;
+	PurchaseHistoryCollection* myPurchaseHistoryCollection;
 public:
-    string getName() {};
-    double getRegNo() {};
-    string getID() {};
-    string getPassword() {};
+	User(std::string name, std::string residentRegistrationNumber, std::string id, std::string pw);
+	void createUser(std::string name, std::string residentRegistrationNumber, std::string id, std::string pw);
+	User* getNextUserPtr();
+	void deleteUser(User* userPtr);
+	int checkId(std::string id);
+	int checkPw(std::string pw);
+	//신규
+	std::string getName();
+	PurchaseHistoryCollection getMyPurchaseHistoryCollection();
+	ProductCollection getAllSalesCollection();
+	ProductCollection getOnSalesCollection();
+	ProductCollection getSoldoutCollection();
 
-    void createID(string userDB, string name, string residentRegistrationNumber, string ID, string pw) {};
-    void checkLogin(string ID, string pw) {};
-    void withdrawalUser(string id) {};
 
-    ProductCollection getAllSalesCollection() {};
-    ProductCollection getOnSalesCollection() {};
-    ProductCollection getSoldoutCollection() {};
 };

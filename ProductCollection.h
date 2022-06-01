@@ -10,26 +10,26 @@
 #include <vector>
 #include "Product.h"
 
-using namespace std;
+
 
 class ProductCollection { 
 
 private:
-	vector<Product> v;
+	std::vector<Product> v;
 
 public:
 	//Product findFirst();
 	//vector<Product>::iterator findFirstIdx() {};
 	////Product getNext(vector<Product>::iterator it) {};
 	
-	vector<Product>::iterator findFirstIdx();
-	vector<Product>::iterator getNext(vector<Product>::iterator it);
-	vector<Product>::iterator findLastIdx();
+	std::vector<Product>::iterator findFirstIdx();
+	std::vector<Product>::iterator getNext(std::vector<Product>::iterator it);
+	std::vector<Product>::iterator findLastIdx();
 
-	vector<Product> getList() {};
+	std::vector<Product> getList();
 
 	void addProduct(Product p) {};
 	//void traverseAll() {};
-	vector<Product> listOnsaleProducts() {};
-	vector<Product> listSoldoutProducts() {};
+	std::vector<Product> listOnsaleProducts() {};
+	std::vector<Product> listSoldoutProducts() {};
 };

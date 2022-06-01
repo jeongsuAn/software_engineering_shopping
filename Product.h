@@ -1,6 +1,7 @@
+#pragma once
 /*
 * File name : Product.h
-* File created by B711169 ¡§¥Ÿ¿∫
+* File created by B711169 ??????
 */
 
 #include <string>
@@ -31,17 +32,17 @@ public:
 
     Product(string sellerID, string pname, string manufacturer, int price, int quantity) {};
 
-    string getSellerID(){};
-    string getProductName(){};
-    string getManufacturer(){};
-    int getPrice(){};
-    int getQuantity(){};
+    string getSellerID() {};
+    string getProductName() {};
+    string getManufacturer() {};
+    int getPrice() {};
+    int getQuantity() {};
     int getSoldQuantity() {};
-    bool getSalesState(){};
+    bool getSalesState() {};
     //Product getProductByName(string productName)
     //{
     //}
-    void savePurchaseSatisfaction(int score){};
-    void getItemDetails(){};
-    statisticsDTO getInfoForStatistics(){};
+    void savePurchaseSatisfaction(int score) {};
+    void getItemDetails() {};
+    struct statisticsDTO getInfoForStatistics() ;
 };

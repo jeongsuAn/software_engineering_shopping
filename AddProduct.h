@@ -1,3 +1,4 @@
+#pragma once
 /*
 * Class : AddProduct
 * Description:  AddProduct control class
@@ -8,12 +9,13 @@
 
 #include <iostream>
 #include "User.h"
-#include "Product.h"
+class User;
+class Product;
 
 class AddProduct
 {
 public:
     // 3.1. 판매 의류 등록
     // > [상품명][제작회사명][가격][수량]
-    AddProduct(User u, string pName, string manufacturer, int price, int quantity, FILE* out_fp);
+    void addProduct(User* u, std::string pName, std::string manufacturer, int price, int quantity, FILE* out_fp);
 };
