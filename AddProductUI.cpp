@@ -71,5 +71,5 @@ void AddProductUI::enable(FILE* out_fp)
 {
     // 출력 형식
     fprintf(out_fp, "3.1 판매 의류 등록\n");
-    fprintf(out_fp, "%s %s %s %s\n", (this->productName).c_str(), (this->manufacturer).c_str(), (this->price).c_str(), (this->quantity).c_str());
+    fprintf(out_fp, "> %s %s %s %s\n", (this->productName).c_str(), (this->manufacturer).c_str(), (this->price).c_str(), (this->quantity).c_str());
 }

@@ -33,6 +33,8 @@ public:
 	int checkPw(std::string pw);
 	//�ű�
 	std::string getName();
+	std::string getId();
+
 	// PurchaseHistoryCollection getMyPurchaseHistoryCollection();
 
 	

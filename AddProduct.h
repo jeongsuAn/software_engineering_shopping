@@ -16,5 +16,5 @@ class AddProduct
 {
 public:
     AddProduct();
-    void addProduct(User* u, FILE* in_fp, FILE* out_fp);
+    void addProduct(User* admin, User* u, FILE* in_fp, FILE* out_fp);
 };

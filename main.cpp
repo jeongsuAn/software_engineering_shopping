@@ -15,6 +15,8 @@
 #include "ProductPayment.h"
 #include "CheckPurchaseHistory.h"
 #include "Satisfaction.h"
+#include "SearchProducts.h"
+#include "SearchProductsUI.h"
 
 // 상수 선언
 #define MAX_STRING 32
@@ -49,6 +51,9 @@ void doTask(FILE* in_fp, FILE* out_fp)
     Start* start =new Start(in_fp, out_fp);
     MainControl* mControl = nullptr;
     User* user = nullptr;
+    User* admin = new User("admin","0000","admin","admin"); //여기에 모든 상품들어감.
+
+    std::string pName;
     while (!is_program_exit)
     {
         // 입력파일에서 메뉴 숫자 2개를 읽기
@@ -108,7 +113,7 @@ void doTask(FILE* in_fp, FILE* out_fp)
             {
                 // "3.1. 판매 의류 등록" 메뉴 부분
                 AddProduct* addProduct = new AddProduct();
-                addProduct->addProduct(user, in_fp, out_fp);
+                addProduct->addProduct(admin, user, in_fp, out_fp);
 
                 break;
             }
@@ -137,23 +142,29 @@ void doTask(FILE* in_fp, FILE* out_fp)
             switch (menu_level_2)
             {
             case 1:   
-            {  //showProductDetails();  
+            {  
+                //4.1.상품 정보 검색
+                SearchProducts* searchProducts = new SearchProducts();
+                pName = searchProducts->inputProductsName(in_fp);
+                searchProducts->searchProducts(admin, in_fp, out_fp);
+
+               
                 break;
             }
             case 2:
             {  
-                std::string pName = "hat";  // for test
-                ProductPayment* productPayment = new ProductPayment(out_fp, user, pName);
+                //조회시 자동으로 pName에 상품명 저장됨
+                ProductPayment* productPayment = new ProductPayment(out_fp, user, pName, admin);
                 break;
             }
             case 3:
             {  
-                CheckPurchaseHistory* checkPurchaseHistory = new CheckPurchaseHistory(user, out_fp);
+                CheckPurchaseHistory* checkPurchaseHistory = new CheckPurchaseHistory(user, out_fp, admin);
                 break;
             }
             case 4:
             {  
-                Satisfaction* satisfaction = new Satisfaction(user, in_fp, out_fp);
+                Satisfaction* satisfaction = new Satisfaction(admin, in_fp, out_fp);
                 break;
             }
             }
@@ -167,7 +178,7 @@ void doTask(FILE* in_fp, FILE* out_fp)
             {
                 // 5.1. 판매 상품 통계
                 SalesStatistics* salesSatistics = new SalesStatistics();
-                salesSatistics->showStatistics(out_fp, user);
+                salesSatistics->showStatistics(out_fp, user, admin);
 
                 break;
             }
@@ -193,6 +204,30 @@ void doTask(FILE* in_fp, FILE* out_fp)
             return;
         }
     }
+        /*
+        * 3.1 판매 의류 등록
+        * Author : B711169 정다은
+        */
+        //void enrollProduct()
+        //{
+        //    char product_name[MAX_STRING], manufacturer[MAX_STRING];
+        //    int price, quantity;
+        //    // 입력 형식 : 이름, 주민번호, ID, Password를 파일로부터 읽음
+        //    fscanf(in_fp, "%s %s %d %d", product_name, manufacturer, price, quantity);
+        //
+        //    User user = ;
+        //
+        //    string pName = product_name;
+        //    string manufacturer = manufacturer;
+        //    Product p(pName, manufacturer, price, quantity);
+        //
+        //    user.getSalesCollection().addProduct(p);
+        //
+        //    // 출력 형식
+        //    fprintf(out_fp, "3.1 판매 의류 등록\n");
+        //    fprintf(out_fp, "%s %s %d %d\n", product_name, manufacturer, price, quantity);
+        //
+        //}
 }
 
 void program_exit()

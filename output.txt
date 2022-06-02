@@ -1,20 +1,63 @@
 1.1. 회원가입
 > lee 123456 mbc pwd1
+1.1. 회원가입
+> an 123456 ajs pwd2
+1.1. 회원가입
+> jeong 123456 jde pwd3
+1.1. 회원가입
+> beak 123456 bje pwd4
 2.1. 로그인
 > mbc pwd1 
 3.1 판매 의류 등록
-hat chulsoo 2000 1
+> hat chulsoo 2000 1
 3.1 판매 의류 등록
-pants namee 5000 2
-3.2. 등록 상품 조회
-hat chulsoo 2000 1
-pants namee 5000 2
+> pants namee 5000 2
+2.2. 로그아웃
+> mbc 
+2.1. 로그인
+> ajs pwd2 
+3.1 판매 의류 등록
+> phone apple 6000 3
+3.1 판매 의류 등록
+> clock samsung 5000 4
+2.1. 로그인
+> mbc pwd1 
+4.1. 상품 정보 검색
+> an phone apple 6000 3 0
 4.2. 상품 구매
-> lee hat
+> an phone
+4.1. 상품 정보 검색
+> an clock samsung 5000 4 0
+4.2. 상품 구매
+> an clock
+4.1. 상품 정보 검색
+> an phone apple 6000 2 0
+4.2. 상품 구매
+> an phone
+4.1. 상품 정보 검색
+> an clock samsung 5000 3 0
+4.2. 상품 구매
+> an clock
 4.4. 상품 구매만족도 평가
-> lee hat 3
+> an phone 4
+4.4. 상품 구매만족도 평가
+> an phone 3
+4.4. 상품 구매만족도 평가
+> an clock 3
+4.4. 상품 구매만족도 평가
+> an clock 5
 4.3. 상품 구매 내역 조회
-lee hat chulsoo 2000 1 3
+> an phone apple 6000 2 3
+> an clock samsung 5000 3 4
+> an phone apple 6000 1 3
+> an clock samsung 5000 2 4
 5.1. 판매 상품 통계
-hat 0 3
-pants 0 0
+> hat 0 0
+> pants 0 0
+2.2. 로그아웃
+> mbc 
+2.1. 로그인
+> ajs pwd2 
+5.1. 판매 상품 통계
+> phone 12000 3
+> clock 10000 4

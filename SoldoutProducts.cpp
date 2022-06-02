@@ -16,6 +16,7 @@ SoldoutProducts::SoldoutProducts()
 void SoldoutProducts::showSoldoutProducts(User* u, FILE* o_fp)
 {
     // Output UI    
+    
     SoldoutProductsUI* UI = new SoldoutProductsUI();
     UI->enableUI(u, o_fp, u->getSoldoutCollection());
 }

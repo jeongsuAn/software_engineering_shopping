@@ -30,6 +30,6 @@ public:
     std::string getAvgSatisfactionScore();
 
     SalesStatisticsUI();
-    void enableUI(User* u, FILE* o_fp, std::vector<Product>& list);
+    void enableUI(User* u, FILE* o_fp, std::vector<Product>& list, User* admin);
     void enable(FILE* o_fp);
 };

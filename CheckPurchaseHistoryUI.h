@@ -39,6 +39,6 @@ public:
     std::string getQuantity();
     std::string getAvgSatisfaction();
 
-    void enableUI(User* u, FILE* o_fp);
+    void enableUI(User* u, FILE* o_fp, User* admin);
     void enable(FILE* o_fp);
 };

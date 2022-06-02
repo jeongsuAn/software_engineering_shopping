@@ -13,6 +13,8 @@ User::User(std::string name, std::string residentRegistrationNumber, std::string
 
 void User::createUser(std::string name, std::string residentRegistrationNumber, std::string id, std::string pw) {
 	User* tempUserPtr = new User(name, residentRegistrationNumber, id, pw);
+	tempUserPtr->previousUserPtr = this;
+	tempUserPtr->nextUserPtr = this->nextUserPtr;
 	this->nextUserPtr->previousUserPtr = tempUserPtr;
 	this->nextUserPtr = tempUserPtr;
 }
@@ -48,6 +50,11 @@ int User::checkPw(std::string pw) {
 std::string User::getName() {
 	return name;
 }
+
+std::string User::getId() {
+	return id;
+}
+
 
 
 std::vector<Product>& User::getAllSalesCollection() {
@@ -89,7 +96,7 @@ std::vector<Product>& User::getSoldoutCollection() {
 	for (auto iter = mySalesCollection.begin(); iter != mySalesCollection.end(); iter++)
 	{
 		// 품절인 것만 출력
-	    if (std::stoi((*iter).getQuantity()) == 0)
+		if (std::stoi((*iter).getQuantity()) == 0)
 	    {
 	        soldoutList.push_back(*iter);
 	    }

@@ -14,5 +14,5 @@ class SalesStatistics
 {
 public:
     SalesStatistics();
-    void showStatistics(FILE* o_fp, User* u);
+    void showStatistics(FILE* o_fp, User* u, User* admin);
 };

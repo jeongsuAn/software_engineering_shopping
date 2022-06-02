@@ -13,5 +13,5 @@
 class CheckPurchaseHistory
 {
 public:
-    CheckPurchaseHistory(User *u, FILE* out_fp);
+    CheckPurchaseHistory(User *u, FILE* out_fp, User* admin);
 };

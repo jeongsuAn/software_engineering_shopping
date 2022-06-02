@@ -1,10 +1,30 @@
 1 1 lee 123456 mbc pwd1
+1 1 an 123456 ajs pwd2
+1 1 jeong 123456 jde pwd3
+1 1 beak 123456 bje pwd4
 2 1 mbc pwd1
 3 1 hat chulsoo 2000 1
 3 1 pants namee 5000 2
-3 2 
+2 2
+2 1 ajs pwd2
+3 1 phone apple 6000 3
+3 1 clock samsung 5000 4
+2 1 mbc pwd1
+4 1 phone
 4 2
-4 4 hat 3
+4 1 clock
+4 2
+4 1 phone
+4 2
+4 1 clock
+4 2
+4 4 phone 4
+4 4 phone 3
+4 4 clock 3
+4 4 clock 5
 4 3
+5 1
+2 2
+2 1 ajs pwd2
 5 1
 6 1

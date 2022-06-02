@@ -28,6 +28,7 @@ private:
 public:
     std::vector<int> scores;
 
+
     Product();
     Product(std::string sellerID, std::string pname, std::string manufacturer, std::string price, std::string quantity);
 
@@ -46,7 +47,12 @@ public:
     int getTotalProfit();
     std::vector<int>& getScores();
 
+    //Product getProductByName(string productName)
+    //{
+    //}
+
     void savePurchaseSatisfaction(int score);
     void getItemDetails();
+    // struct statisticsDTO getInfoForStatistics();
     int avgSatisfaction();
 };

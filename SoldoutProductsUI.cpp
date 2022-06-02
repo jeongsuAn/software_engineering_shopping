@@ -70,7 +70,7 @@ void SoldoutProductsUI::enableUI(User* u, FILE* o_fp, std::vector<Product>& list
     int idx = 0;
     while (idx < list.size())
     {
-        if (stoi(list[idx].getQuantity()) == 0)
+        if (stoi(list[idx].getQuantity()) == 0 && (u->getId() == list[idx].getSellerID()))
         {
             this->setSellerID(list[idx].getSellerID());
             this->setProductName(list[idx].getProductName());
@@ -88,6 +88,6 @@ void SoldoutProductsUI::enableUI(User* u, FILE* o_fp, std::vector<Product>& list
 void SoldoutProductsUI::enable(FILE* out_fp)
 {
     // 출력 형식
-    fprintf(out_fp, "%s %s %s %s %s\n", this->getProductName().c_str(), this->getManufacturer().c_str(), 
+    fprintf(out_fp, "> %s %s %s %s %s\n", this->getProductName().c_str(), this->getManufacturer().c_str(),
         this->getPrice().c_str(), this->getSoldQuantity().c_str(), this->getAvgSatisfaction().c_str());
 }

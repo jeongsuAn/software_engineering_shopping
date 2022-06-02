@@ -6,8 +6,8 @@
 
 #include "CheckPurchaseHistory.h"
 
-CheckPurchaseHistory::CheckPurchaseHistory(User *u, FILE* outFp)
+CheckPurchaseHistory::CheckPurchaseHistory(User *u, FILE* outFp, User* admin)
 {
     CheckPurchaseHistoryUI* cphUI = new CheckPurchaseHistoryUI(u, outFp);
-    cphUI->enableUI(u, outFp);
+    cphUI->enableUI(u, outFp,admin);
 }

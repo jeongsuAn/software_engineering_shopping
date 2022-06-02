@@ -15,5 +15,5 @@
 class ProductPayment
 {
 public:
-    ProductPayment(FILE *out_fp, User *u, std::string pName);
+    ProductPayment(FILE *out_fp, User *u, std::string pName, User* admin);
 };

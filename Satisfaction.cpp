@@ -26,7 +26,8 @@ Satisfaction::Satisfaction(User *u, FILE *inFp, FILE *outFp)
 void Satisfaction::transferSatisfaction(User *u, std::string pName, std::string score)
 {
     Product &SalesProduct = u->getOneSalesProduct(pName);
-    Product &HistoryProduct = u->getPurchaseHistory(pName);
+//    Product &HistoryProduct = u->getPurchaseHistory(pName);
     SalesProduct.savePurchaseSatisfaction(std::stoi(score));      // 구매 만족도 저장
-    HistoryProduct.savePurchaseSatisfaction(std::stoi(score));      // 구매 만족도 저장
+//    HistoryProduct.savePurchaseSatisfaction(std::stoi(score));      // 구매 만족도 저장
+
 }

@@ -13,8 +13,8 @@ SalesStatistics::SalesStatistics()
 {
 
 }
-void SalesStatistics::showStatistics(FILE* o_fp, User* u)
+void SalesStatistics::showStatistics(FILE* o_fp, User* u, User* admin)
 {
 	SalesStatisticsUI* UI = new SalesStatisticsUI();
-	UI->enableUI(u, o_fp, u->getAllSalesCollection());
+	UI->enableUI(u, o_fp, u->getAllSalesCollection(), admin);
 }
