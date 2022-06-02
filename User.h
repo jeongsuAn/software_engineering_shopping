@@ -1,3 +1,8 @@
+// Revision
+ //   1. When & Who : 2022/06/01 01:00 am by B711089 Baek Jiyeon
+ //      What : add attribute myPurchaseHistoryCollection, 
+ //             add function getMyPurchaseHistoryCollection, getPurchaseHistory, getOneSalesProduct, addPurchaseHistory
+
 #pragma once
 #include <string>
 #include <vector>
@@ -7,12 +12,12 @@ class PurchaseHistoryCollection;
 class User {
 private:
 	std::string name;
-	std::string residentRegistrationNumber; //ÁÖ¹Î¹øÈ£
+	std::string residentRegistrationNumber; //ï¿½Ö¹Î¹ï¿½È£
 	std::string id;
 	std::string pw;
 	User* nextUserPtr;
 	User* previousUserPtr;
-	//½Å±Ô
+	//ï¿½Å±ï¿½
 
 	// PurchaseHistoryCollection* myPurchaseHistoryCollection;
 public:
@@ -26,7 +31,7 @@ public:
 	void deleteUser(User* userPtr);
 	int checkId(std::string id);
 	int checkPw(std::string pw);
-	//½Å±Ô
+	//ï¿½Å±ï¿½
 	std::string getName();
 	// PurchaseHistoryCollection getMyPurchaseHistoryCollection();
 

@@ -5,7 +5,7 @@
 */
 
 // Revision
- //   1. When & Who : 2022/06/01 01:00 am by B711089
+ //   1. When & Who : 2022/06/01 01:00 am by B711089 Baek Jiyeon
  //      What : include cmath, 
  //             add function avgSatisfaction
 

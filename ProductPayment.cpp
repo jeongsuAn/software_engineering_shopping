@@ -1,3 +1,9 @@
+// Class : ProductPayment
+// Description: This is member function of ProductPayment control class.
+// Created: 2022/5/30 10:00 pm
+// Author: B711089 Baek Jiyeon
+// mail: etety39@g.hongik.ac.kr
+
 #include "ProductPayment.h"
 
 ProductPayment::ProductPayment(FILE* outFp, User *u, std::string pName)

@@ -1,7 +1,7 @@
 // Class : SatisfactionUI
 // Description: This is a Satisfaction boundary class.
 // Created: 2022/5/31 11:00 am
-// Author: B711089 백지연
+// Author: B711089 Baek Jiyeon
 // mail: etety39@g.hongik.ac.kr
 
 #pragma once
