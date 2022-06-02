@@ -7,6 +7,7 @@ Product::Product(std::string sellerID, std::string pname, std::string manufactur
     this->manufacturer = manufacturer;
     this->price = price;
     this->quantity = quantity;
+    this->soldQuantity = "0";
    
 }
 
@@ -35,26 +36,33 @@ std::string Product::getSoldQuantity()
     return soldQuantity;
 }
 
-bool Product::getSalesState()
+std::string Product::getAvgScore()
 {
-    // 판매중: true, 품절: false
-    return salesState;
+    return soldQuantity;
 }
+
+
 
 int Product::getPurchaseSatisfaction()
 {
-    int score = 0;
-    for (int i = 0; i < scores.size(); i++)
+    if (scores.size() == 0)
     {
-        score += scores[i];
+        return 0;
     }
-    score /= scores.size();
-    return score;
+    else {
+        int score = 0;
+        for (int i = 0; i < scores.size(); i++)
+        {
+            score += scores[i];
+        }
+        score /= scores.size();
+        return score;
+    }
 }
 
 int Product::getTotalProfit()
 {
-    return stoi(soldQuantity) * stoi(price);
+    return (std::stoi(this->soldQuantity) * std::stoi(this->price) );
 }
 
 std::vector<int>& Product::getScores()
@@ -86,24 +94,6 @@ int Product::avgSatisfaction() {
     return (int)(sum / scores.size());
 }
 
-
-//statisticsDTO Product::getInfoForStatistics()
-//{
-//    statisticsDTO s;
-//    s.productName = this->getproductName();
-//
-//    s.totalProfit = soldQuantity * price;
-//
-//    int avgSatisfaction = 0;
-//    for (vector<int>::iterator iter = scores.begin(); iter != scores.end(); iter++) {
-//        avgSatisfaction += *iter;
-//    }
-//    avgSatisfaction /= soldQuantity;
-//
-//    s.avgSatisfaction = avgSatisfaction;
-//
-//    return s;
-//}
 
 void Product::setQuantity()
 {

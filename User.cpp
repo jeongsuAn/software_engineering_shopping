@@ -71,7 +71,7 @@ std::vector<Product>& User::getOnSalesCollection() {
 
 	for (auto iter = mySalesCollection.begin(); iter != mySalesCollection.end(); iter++) 
 	{
-		if ((*iter).getSalesState() == true || std::stoi((*iter).getQuantity()) != 0)
+		if (std::stoi((*iter).getQuantity()) != 0)
 		{
 			onsalesList.push_back(*iter);
 		}
@@ -89,7 +89,7 @@ std::vector<Product>& User::getSoldoutCollection() {
 	for (auto iter = mySalesCollection.begin(); iter != mySalesCollection.end(); iter++)
 	{
 		// 품절인 것만 출력
-	    if (!(*iter).getSalesState())
+	    if (std::stoi((*iter).getQuantity()) == 0)
 	    {
 	        soldoutList.push_back(*iter);
 	    }

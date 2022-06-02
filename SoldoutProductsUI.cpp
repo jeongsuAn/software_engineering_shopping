@@ -68,7 +68,7 @@ void SoldoutProductsUI::enableUI(User* u, FILE* o_fp, std::vector<Product>& list
     fprintf(o_fp, "3.3. 판매 완료 상품 조회\n");
 
     int idx = 0;
-    while (idx++ < list.size())
+    while (idx < list.size())
     {
         if (stoi(list[idx].getQuantity()) == 0)
         {
@@ -79,6 +79,7 @@ void SoldoutProductsUI::enableUI(User* u, FILE* o_fp, std::vector<Product>& list
             this->setSoldQuantity(list[idx].getSoldQuantity());
             this->setAvgSatistaction(to_string(list[idx].getPurchaseSatisfaction()));
             enable(o_fp);
+            idx++;
         }
     }
 }
@@ -87,5 +88,6 @@ void SoldoutProductsUI::enableUI(User* u, FILE* o_fp, std::vector<Product>& list
 void SoldoutProductsUI::enable(FILE* out_fp)
 {
     // 출력 형식
-    fprintf(out_fp, "%s %s %s %s %s %s\n", this->getProductName(), this->getManufacturer(), this->getPrice(), this->getSoldQuantity(), this->getAvgSatisfaction());
+    fprintf(out_fp, "%s %s %s %s %s\n", this->getProductName().c_str(), this->getManufacturer().c_str(), 
+        this->getPrice().c_str(), this->getSoldQuantity().c_str(), this->getAvgSatisfaction().c_str());
 }

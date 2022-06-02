@@ -193,30 +193,6 @@ void doTask(FILE* in_fp, FILE* out_fp)
             return;
         }
     }
-        /*
-        * 3.1 판매 의류 등록
-        * Author : B711169 정다은
-        */
-        //void enrollProduct()
-        //{
-        //    char product_name[MAX_STRING], manufacturer[MAX_STRING];
-        //    int price, quantity;
-        //    // 입력 형식 : 이름, 주민번호, ID, Password를 파일로부터 읽음
-        //    fscanf(in_fp, "%s %s %d %d", product_name, manufacturer, price, quantity);
-        //
-        //    User user = ;
-        //
-        //    string pName = product_name;
-        //    string manufacturer = manufacturer;
-        //    Product p(pName, manufacturer, price, quantity);
-        //
-        //    user.getSalesCollection().addProduct(p);
-        //
-        //    // 출력 형식
-        //    fprintf(out_fp, "3.1 판매 의류 등록\n");
-        //    fprintf(out_fp, "%s %s %d %d\n", product_name, manufacturer, price, quantity);
-        //
-        //}
 }
 
 void program_exit()

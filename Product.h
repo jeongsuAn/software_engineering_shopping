@@ -23,20 +23,12 @@ private:
     std::string price;
     std::string quantity;
     std::string soldQuantity;
-    bool salesState;
+    std::string avgScore;
 
 public:
     std::vector<int> scores;
 
-    //typedef struct statisticsDTO
-    //{
-    //    string productName;
-    //    int totalProfit;
-    //    int avgSatisfaction;
-    //} sDTO;
-
     Product();
-
     Product(std::string sellerID, std::string pname, std::string manufacturer, std::string price, std::string quantity);
 
     std::string getSellerID();
@@ -45,6 +37,7 @@ public:
     std::string getPrice();
     std::string getQuantity();
     std::string getSoldQuantity();
+    std::string getAvgScore();
 
     void setQuantity();
 
@@ -53,12 +46,7 @@ public:
     int getTotalProfit();
     std::vector<int>& getScores();
 
-    //Product getProductByName(string productName)
-    //{
-    //}
-
     void savePurchaseSatisfaction(int score);
     void getItemDetails();
-    // struct statisticsDTO getInfoForStatistics();
     int avgSatisfaction();
 };
